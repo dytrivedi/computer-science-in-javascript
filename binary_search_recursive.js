@@ -5,11 +5,9 @@ function binarySearch(array, value) {
         if (value === array[middle]) {
             return middle;
         } else if (value > array[middle]) {
-            startIndex = middle + 1;
-            return search(startIndex, stopIndex);
+            return search(middle + 1, stopIndex);
         } else {
-            stopIndex = middle - 1;
-            return search(startIndex, stopIndex);
+            return search(startIndex, middle - 1);
         }
     }
     return search(0, array.length - 1);
