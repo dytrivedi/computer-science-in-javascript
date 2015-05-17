@@ -1,8 +1,8 @@
-function BinaryTree() {
+function BinarySearchTree() {
     this._root = null;
 }
 
-BinaryTree.prototype.contains = function(value) {
+BinarySearchTree.prototype.contains = function(value) {
     var current = this._root;
     while (current) {
         if (value > current.value) {
@@ -16,7 +16,7 @@ BinaryTree.prototype.contains = function(value) {
     return false;
 };
 
-BinaryTree.prototype.add = function(value) {
+BinarySearchTree.prototype.add = function(value) {
     var node = {
         left  : null,
         right : null,
@@ -48,7 +48,7 @@ BinaryTree.prototype.add = function(value) {
     }
 };
 
-BinaryTree.prototype.traverse = function(action) {
+BinarySearchTree.prototype.traverse = function(action) {
     function inOrder(node) {
         if (node) {
             if (node.left) inOrder(node.left);
@@ -59,7 +59,7 @@ BinaryTree.prototype.traverse = function(action) {
     inOrder(this._root);
 };
 
-BinaryTree.prototype.size = function() {
+BinarySearchTree.prototype.size = function() {
     var length = 0;
     this.traverse(function(node) {
         length++;
@@ -67,7 +67,7 @@ BinaryTree.prototype.size = function() {
     return length;
 };
 
-BinaryTree.prototype.toArray = function() {
+BinarySearchTree.prototype.toArray = function() {
     var array = [];
     this.traverse(function(node) {
         array.push(node.value);
@@ -75,6 +75,6 @@ BinaryTree.prototype.toArray = function() {
     return array;
 };
 
-BinaryTree.prototype.toString = function() {
+BinarySearchTree.prototype.toString = function() {
     return this.toArray().toString();
 };
